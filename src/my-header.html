@@ -4,11 +4,8 @@
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="my-menu.html">
 
-
 <dom-module id="my-header">
     <template>
-
-
         <firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
             <div class="login">
                 <paper-button on-tap="login">
@@ -81,11 +78,8 @@
                 h2 {
                     color: #fff;
                 }
-                
+
             </style>
-
-
-
     </template>
     <script>
         class MyHeader extends Polymer.Element {

@@ -16,18 +16,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="my-cine-suntem.html">
 
 <dom-module id="my-view1">
-
-
-
   <template>
-
-
     <style include="shared-styles">
       :host {
         display: block;
 
       }
-
 
 my-bunvenit {
     display: grid;
@@ -39,7 +33,6 @@ my-cinesuntem {
     display: grid;
     grid-row: 2;
 }
-
 
   articole-scriesitu{
   grid-row-start: 1;
@@ -62,12 +55,9 @@ ante-footer {
     width: 100%;
 }
 
-
 the-footer{
   display: grid;
 }
-
-
 
 .main-title{
   display: flex;
@@ -82,7 +72,6 @@ the-footer{
   pointer-events: none;
 }
 
-
 .second-title{
   display: flex;
   justify-content: center;
@@ -95,18 +84,12 @@ the-footer{
   width:100%;
 }
 
-
-
-
-
-
 h1{
   font-size: 40px;
   text-align: center;
   align-self: auto;
   color: #fff;
 }
-
 
 h2{
   font-size: 30px;
@@ -115,12 +98,7 @@ h2{
   color: #fff;
 }
 
-
-
     </style>
-
-
-
 
 <div class="main-title">
     <h1>SOULMATTERS</h1>
@@ -129,32 +107,17 @@ h2{
   </div>
 </div>
 
-
-    
 <my-bunvenit>
 </my-bunvenit>
 
 <cine-suntem>
 </cine-suntem>
 
-
 <ante-footer>
 </ante-footer>
-
-
-
-
-
 </div>
 
-
-
-
-
-
-
   </template>
-
   <script>
     class MyView1 extends Polymer.Element {
       static get is() { return 'my-view1'; }
