@@ -1,0 +1,124 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <dom-module id="ante-footer">
+        <template>
+
+
+    
+
+<div class="antefooter">
+        <div class="linie1">
+            </div>
+    <a href="/cine-suntem"><h3>Autori</h3>
+   <h3>Povesti cu suflet</h3></a>
+   <a href="/gest-umanitar"><h3>Umanitar</h3></a>
+    <h3>Termenii nostri</h3>
+  
+    <paper-button><a href="/scrie-articol">Scrie un articol</a></paper-button>
+    
+
+  </div>
+
+
+
+            <style>
+                :host {
+                    display: block
+                }
+
+
+
+
+paper-button {
+    border: 1px solid #ffff;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    width: 180px;
+    top: 20px;
+}
+
+.antefooter {
+    width: 100%;
+    background-color: #222121;
+    position: relative;
+    padding: 73px 0;
+}
+
+
+
+@media (max-width:500px){
+ .antefooter{
+    width: 100%;
+    background-color: #222121;
+    position: relative;
+  
+  }
+}
+
+
+.buton-articol {
+    background-color: #222222;
+    display: grid;
+    padding: 2;
+    margin: 0 auto;
+    height: 191px;
+}
+
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+h2 {
+    color: #fff;
+    text-align: center;
+
+
+}
+
+
+h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+
+
+}
+
+.linie1 {
+    border-bottom: solid 5px cyan;
+    width: 47px;
+    justify-content: center;
+    display: flex;
+    padding: -3px 0;
+    margin: 0 auto;
+}
+
+            </style>
+            
+             </template>
+        <script>
+            class AnteFooter extends Polymer.Element {
+                static get is() { return 'ante-footer'; }
+                static get properties() {
+                return {
+                 };
+             }
+            constructor() {
+                super();
+            }
+            ready() {
+                super.ready();
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                });
+            }
+        }
+        window.customElements.define(AnteFooter.is, AnteFooter);
+    </script>
+</dom-module>

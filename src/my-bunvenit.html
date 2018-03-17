@@ -1,0 +1,103 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <dom-module id="my-bunvenit">
+        <template>
+
+
+<div class="bunvenit">
+        <div class="linie3">
+            </div>
+    <h2>BUN VENIT!</h2>
+    <p>Lorem Ipsum este pur şi simplu o machetă pentru text
+         a industriei tipografice. Lorem Ipsum a fost 
+         macheta standard literele respective. Nu doar că a supravieţuit timp de cinci sec
+        Lorem Ipsum este pur şi simplu o machetă pentru text
+                a industriei tipografice. Lorem Ipsum a fost 
+                macheta standard literele respective. Nu doar că a supravieţuit timp de cinci sec
+                Lorem Ipsum este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard literele respective. Nu doar că a supravieţuit timp de cinci sec Lorem Ipsum este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard literele respective. Nu doar că a supravieţuit timp de cinci sec</p>
+    
+    <paper-button><a href="/articole">Articole</a></paper-button>
+</div>
+
+
+
+
+
+            <style>
+                :host {
+                    display: block
+                }
+
+.bunvenit {
+    background-color: #212121;
+    width: 100%;
+    justify-content: center;
+    margin-top: -17px;
+    height: auto;
+    padding: 73px 0;
+}
+
+paper-button {
+    border: solid 1px #ffff;
+    max-width: 149px;
+    margin: 0 auto;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    top: 17px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+
+}
+
+p {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+.linie3 {
+    border-bottom: solid 5px cyan;
+    margin: -3px auto;
+    width: 57px;
+    background-color: #221122;
+}
+
+
+            </style>
+            
+             </template>
+        <script>
+            class MyBunvenit extends Polymer.Element {
+                static get is() { return 'my-bunvenit'; }
+                static get properties() {
+                return {
+                 };
+             }
+            constructor() {
+                super();
+            }
+            ready() {
+                super.ready();
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                });
+            }
+        }
+        window.customElements.define(MyBunvenit.is, MyBunvenit);
+    </script>
+</dom-module>

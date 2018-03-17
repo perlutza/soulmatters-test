@@ -1,0 +1,267 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/smd-social/smd-social.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+    <dom-module id="the-footer">
+        <template>
+            <style>
+                :host {
+                    display: block
+                }
+
+
+
+.linie2 {
+    border-bottom: solid 5px cyan;
+    margin: 25px auto;
+    width: 57px;
+    padding: 49px 0;
+}
+
+
+
+
+
+.footer{
+    width: 100%;
+}
+
+
+
+
+@media(max-width:500px){
+    h6 {
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    align-items: center;
+    align-self: center;
+}
+}
+
+
+img{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+.fondatori {
+    width: 100%;
+    display: grid;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+
+
+h3 {
+    color: #fff;
+    text-align: flex-start;
+    padding: 20px;
+
+
+}
+
+
+
+
+h4 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+
+h5 {
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+}
+
+
+
+h6 {
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+}
+
+
+
+
+
+
+.copyrigt-terms{
+    justify-content: center;
+}
+
+p{
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+
+
+
+.social-buttons {
+    display: flex;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+
+
+smd-social{
+   padding: 10px;
+}
+
+
+
+.layer{
+    width: 100%;
+    height: auto;
+    z-index: 105;
+    position: relative;
+    display: grid;
+}
+ 
+  
+
+.overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color:  #0000008c;
+
+}
+
+
+.us {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap row;
+}
+
+
+
+iron-icons{
+    padding: 10px;
+}
+
+
+iron-image {
+    width: 100vw;
+    height: 500px;
+    grid-area: head;
+}
+
+
+
+@media(max-width:700px) and (min-width:300px){
+    iron-image {
+    height: 600px;
+}
+
+
+}
+
+            </style>
+            
+
+
+<div class="footer">
+                <div class="layer">
+
+            <iron-image src="/images/abstract2.jpg">
+            </iron-image>
+
+          <div class="overlay">
+
+      
+
+
+    <h2>Contact</h2>
+    <p>Pentru a ne trimite un articol, nu ezita sa ne contactezi!
+            Iti vom raspunde cat mai curand posibil!</p>
+            <p>Pentru a ne trimite un articol, nu ezita sa ne contactezi!
+                    Iti vom raspunde cat mai curand posibil!</p>
+                    <p>Pentru a ne trimite un articol, nu ezita sa ne contactezi!
+                            Iti vom raspunde cat mai curand posibil!</p>
+
+
+
+                            <div class="us">
+
+  <div class="social-buttons"> 
+    <smd-social width="20" height="20" logo-circle="" icon="google-plus"></smd-social>
+    <smd-social logo-circle="" width="20" height="20" icon="facebook"></smd-social>
+    <smd-social logo-circle="" width="20" height="20" icon="youtube"></smd-social>
+    <smd-social logo-circle="" width="20" height="20" icon="linkedin"></smd-social>
+
+  </div>
+                            </div>
+
+    <div class="copyrigt-terms">
+    <h6>Soulmatters</h6>
+    <h6>Copyright 2018</h6>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    
+   
+
+
+
+
+
+
+
+
+             </template>
+        <script>
+            class TheFooter extends Polymer.Element {
+                static get is() { return 'the-footer'; }
+                static get properties() {
+                return {
+                 };
+             }
+            constructor() {
+                super();
+            }
+            ready() {
+                super.ready();
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                });
+            }
+        }
+        window.customElements.define(TheFooter.is, TheFooter);
+    </script>
+</dom-module>

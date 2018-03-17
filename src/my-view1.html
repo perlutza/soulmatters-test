@@ -1,0 +1,165 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="my-bunvenit.html">
+<link rel="import" href="cine-suntem.html">
+<link rel="import" href="ante-footer.html">
+<link rel="import" href="my-cine-suntem.html">
+
+<dom-module id="my-view1">
+
+
+
+  <template>
+
+
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+      }
+
+
+my-bunvenit {
+    display: grid;
+    flex-flow: wrap row;
+    width: 100%;
+}
+
+my-cinesuntem {
+    display: grid;
+    grid-row: 2;
+}
+
+
+  articole-scriesitu{
+  grid-row-start: 1;
+  display: grid;
+  grid-row: 3;
+}
+
+ articole-prezentare{
+  grid-row-start: 1;
+  display: grid;
+  grid-row: 3;
+
+ }
+
+ante-footer {
+    display: grid;
+    background-color: #221122;
+    grid-row: 4;
+    flex-flow: wrap row;
+    width: 100%;
+}
+
+
+the-footer{
+  display: grid;
+}
+
+
+
+.main-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 105;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 600px;
+  width:100%;
+  pointer-events: none;
+}
+
+
+.second-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 105;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 710px;
+  width:100%;
+}
+
+
+
+
+
+
+h1{
+  font-size: 40px;
+  text-align: center;
+  align-self: auto;
+  color: #fff;
+}
+
+
+h2{
+  font-size: 30px;
+  text-align: center;
+  align-self: auto;
+  color: #fff;
+}
+
+
+
+    </style>
+
+
+
+
+<div class="main-title">
+    <h1>SOULMATTERS</h1>
+<div class="second-title">
+    <h2>Pentru noi</h2>
+  </div>
+</div>
+
+
+    
+<my-bunvenit>
+</my-bunvenit>
+
+<cine-suntem>
+</cine-suntem>
+
+
+<ante-footer>
+</ante-footer>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+  </template>
+
+  <script>
+    class MyView1 extends Polymer.Element {
+      static get is() { return 'my-view1'; }
+    }
+
+    window.customElements.define(MyView1.is, MyView1);
+  </script>
+</dom-module>

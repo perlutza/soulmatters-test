@@ -1,0 +1,92 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <dom-module id="my-menu">
+        <template>
+
+
+
+
+
+                <div class="meniu">
+
+                        <paper-button > <a href="/#">Acasa</a></paper-button>
+                        <paper-button ><a href="/cine-suntem">Despre</a></paper-button>
+                        <paper-button ><a href="/articole">Articole</a></paper-button>
+                        <paper-button ><a href="/scrie-articol">Scrie articol</a></paper-button>
+                        <paper-button ><a href="/gest-umanitar">Umanitar</a></paper-button>
+
+
+
+                </div>
+
+
+
+            <style>
+                :host {
+                    display: block
+                }
+
+
+
+     paper-button {
+    height: 50px;
+    z-index: 99;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+             .meniu {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    z-index: 105;
+
+}
+
+
+
+
+
+@media (max-width:1598px){
+ .meniu{
+    display: none;
+  }
+}
+
+
+
+
+  a {
+                    color: #ffffff;
+                }
+
+
+
+
+
+            </style>
+            
+             </template>
+        <script>
+            class MyMenu extends Polymer.Element {
+                static get is() { return 'my-menu'; }
+                static get properties() {
+                return {
+                 };
+             }
+            constructor() {
+                super();
+            }
+            ready() {
+                super.ready();
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                });
+            }
+        }
+        window.customElements.define(MyMenu.is, MyMenu);
+    </script>
+</dom-module>

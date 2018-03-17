@@ -1,0 +1,94 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="my-menu.html">
+
+
+<dom-module id="my-header">
+    <template>
+
+
+        <div class="background"> 
+                <div class="layer">
+
+            <iron-image src="/images/abstract2.jpg">
+            </iron-image>
+
+          <div class="overlay"></div>  
+          <my-menu></my-menu>
+        </div>
+    </div>
+
+
+        <style>
+            :host {
+                display: block;
+            }
+
+
+
+            .background {
+                width: 100%;
+                height: auto;
+            }
+
+
+
+.layer{
+    width: 100%;
+    height: auto;
+    z-index: 105;
+    position: relative;
+    display: grid;
+    grid-template-areas: "head";
+}
+ 
+  
+
+.overlay{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color:  #0000008c;
+
+}
+
+
+
+my-menu{
+        grid-area: head;
+        justify-self: flex-end;
+        align-self: center;
+}
+
+            iron-image {
+                width: 100vw;
+                height: 500px;
+                grid-area: head;
+            }
+        </style>
+
+
+
+    </template>
+    <script>
+        class MyHeader extends Polymer.Element {
+            static get is() {
+                return 'my-header';
+            }
+            static get properties() {
+                return {};
+            }
+            constructor() {
+                super();
+            }
+            ready() {
+                super.ready();
+                Polymer.RenderStatus.afterNextRender(this, function () {});
+            }
+        }
+        window.customElements.define(MyHeader.is, MyHeader);
+    </script>
+</dom-module>
