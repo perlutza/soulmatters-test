@@ -25,10 +25,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
 <link rel="import" href="../bower_components/polymerfire/polymerfire.html">
-
-
-
-
 <link rel="lazy-import" href="my-view1.html">
 <link rel="lazy-import" href="my-view2.html">
 <link rel="lazy-import" href="my-view3.html">
@@ -66,41 +62,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
+      paper-button {
+        display: flex;
 
+      }
 
-paper-button{
-  display: flex;
-  
-}
+      @media (min-width:1599px) {
+        app-toolbar {
+          display: none;
+        }
+      }
 
-@media (min-width:1599px){
-  app-toolbar{
-    display: none;
-  }
-}
+      a {
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        margin: 1px;
+      }
 
+      iron-icon {
+        color: #fff;
+        height: 20px;
+        width: 100%;
+        margin: 10px auto;
+      }
 
+      .swipe-menu {
+        display: grid;
+        background-color: #464343;
+      }
 
-
-a{
-  text-decoration: none;
-  color: #fff;
-  text-align: center;
-  margin: 1px;
-}
-
-
-iron-icon {
-    color: #fff;
-    height: 20px;
-    width: 100%;
-    margin: 10px auto;
-}
-
-.swipe-menu {
-    display: grid;
-    background-color: #464343;
-}
       .drawer-list {
         margin: 0 20px;
       }
@@ -118,105 +109,67 @@ iron-icon {
         font-weight: bold;
       }
 
-
-
-my-menu{
-  z-index: 105;
-}
-
-
+      my-menu {
+        z-index: 105;
+      }
     </style>
 
-    <app-location
-        route="{{route}}"
-        url-space-regex="^[[rootPath]]">
+    <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
     </app-location>
 
-    <app-route
-        route="{{route}}"
-        pattern="[[rootPath]]:page"
-        data="{{routeData}}"
-        tail="{{subroute}}">
+    <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
     </app-route>
 
-
-
-    <firebase-app
-    auth-domain="test-edf10.firebaseapp.com"
-    database-url="https://test-edf10.firebaseio.com"
-    api-key="AIzaSyAzpQlmzP9FT7-Tc4bIxhVEJdVOSITA9do"
-    storage-bucket="test-edf10.appspot.com"
-    messaging-sender-id="1086137854604">
-  </firebase-app>
-
-
-
-
- 
-
-
+    <firebase-app auth-domain="test-edf10.firebaseapp.com" database-url="https://test-edf10.firebaseio.com" api-key="AIzaSyAzpQlmzP9FT7-Tc4bIxhVEJdVOSITA9do"
+      storage-bucket="test-edf10.appspot.com" messaging-sender-id="1086137854604">
+    </firebase-app>
 
     <app-drawer-layout fullbleed narrow="{{narrow}}" responsive-width="2500px" height="300px">
-      <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>Meniu</app-toolbar>
 
-<div class="swipe-menu">
-        <iron-icon icon="icons:home"> </iron-icon><a href="/">Acasa</a>
-        <iron-icon icon="icons:class"></iron-icon> <a href="/articole-site">Articole</a>
-        <iron-icon icon="icons:face"></iron-icon><a href="/who-we-are">About</a>
-        <iron-icon icon="icons:arrow-downward"></iron-icon><a href="/trimite-articol">Trimite articol</a>
-        <iron-icon icon="icons:arrow-downward"></iron-icon><a href="/gest-umanitar">Umanitar</a>
-
-
-
+        <div class="swipe-menu">
+          <iron-icon icon="icons:home"> </iron-icon>
+          <a href="/">Acasa</a>
+          <iron-icon icon="icons:class"></iron-icon>
+          <a href="/articole-site">Articole</a>
+          <iron-icon icon="icons:face"></iron-icon>
+          <a href="/who-we-are">About</a>
+          <iron-icon icon="icons:arrow-downward"></iron-icon>
+          <a href="/trimite-articol">Trimite articol</a>
+          <iron-icon icon="icons:arrow-downward"></iron-icon>
+          <a href="/gest-umanitar">Umanitar</a>
         </div>
-      
-          
       </app-drawer>
 
-
-     
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
 
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            
-       
+
             <div main-title>Soulmatters</div>
           </app-toolbar>
         </app-header>
-
-   
-    
-
         <my-header>
         </my-header>
- 
 
-        <iron-pages
-            selected="[[page]]"
-            attr-for-selected="name"
-            fallback-selection="view404"
-            role="main">
+        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
           <my-view1 name="view1"></my-view1>
           <my-view2 name="view2"></my-view2>
           <my-view3 name="view3"></my-view3>
           <my-view404 name="view404"></my-view404>
           <my-who-we-are name="who-we-are"></my-who-we-are>
           <my-trimite-articol name="trimite-articol"></my-trimite-articol>
-          <my-gest-umanitar name ="gest-umanitar"></my-gest-umanitar>
+          <my-gest-umanitar name="gest-umanitar"></my-gest-umanitar>
           <my-articole-site name="articole-site"></my-articole-site>
-          
+
         </iron-pages>
         <the-footer>
         </the-footer>
       </app-header-layout>
- 
     </app-drawer-layout>
-    
   </template>
 
   <script>
@@ -225,7 +178,9 @@ my-menu{
     Polymer.setPassiveTouchGestures(true);
 
     class MyApp extends Polymer.Element {
-      static get is() { return 'my-app'; }
+      static get is() {
+        return 'my-app';
+      }
 
       static get properties() {
         return {
@@ -263,11 +218,11 @@ my-menu{
         // Load page import on demand. Show 404 page if fails
         const resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
         Polymer.importHref(
-            resolvedPageUrl,
-            null,
-            this._showPage404.bind(this),
-            true);
-            
+          resolvedPageUrl,
+          null,
+          this._showPage404.bind(this),
+          true);
+
       }
 
 
@@ -276,11 +231,10 @@ my-menu{
       }
 
 
-      
+
     }
 
     window.customElements.define(MyApp.is, MyApp);
-    
   </script>
 
 

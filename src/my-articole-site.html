@@ -1,45 +1,37 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-    <dom-module id="my-articole-site">
-        <template>
-            <style>
-                :host {
-                    display: block
-                }
-            </style>
-            
-
-<template is="dom-repeat" items="{{articole.site}}">
-<div class="articole-site">
-<div class="title" title ="{{title}}">
-<div class="image" image="{{image}}">
-<div class="post" post="{{post}}">
-</div>
-</div>
+<dom-module id="my-articole-site">
+    <template>
+        <style>
+            :host {
+                display: block
+            }
+        </style>
 
 
-
-
-
-
-
-
-             </template>
+        <template is="dom-repeat" items="{{articole.site}}">
+            <div class="articole-site">
+                <div class="title" title="{{title}}">
+                    <div class="image" image="{{image}}">
+                        <div class="post" post="{{post}}">
+                        </div>
+                    </div>
+        </template>
         <script>
             class MyArticoleSite extends Polymer.Element {
-                static get is() { return 'my-articole-site'; }
+                static get is() {
+                    return 'my-articole-site';
+                }
                 static get properties() {
-                return {
-                 };
-             }
-            constructor() {
-                super();
+                    return {};
+                }
+                constructor() {
+                    super();
+                }
+                ready() {
+                    super.ready();
+                    Polymer.RenderStatus.afterNextRender(this, function () {});
+                }
             }
-            ready() {
-                super.ready();
-                Polymer.RenderStatus.afterNextRender(this, function() {
-                });
-            }
-        }
-        window.customElements.define(MyArticoleSite.is, MyArticoleSite);
-    </script>
+            window.customElements.define(MyArticoleSite.is, MyArticoleSite);
+        </script>
 </dom-module>

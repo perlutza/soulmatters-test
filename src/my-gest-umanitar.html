@@ -1,155 +1,116 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-    <dom-module id="my-gest-umanitar">
-        <template>
-            <style>
-                :host {
-                    display: block
+<dom-module id="my-gest-umanitar">
+    <template>
+        <style>
+            :host {
+                display: block
+            }
+
+            .umanitar-content {
+
+                display: f;
+                margin: 0px auto;
+                padding: 20px 0;
+                max-width: 1200px;
+            }
+
+            img {
+                width: 100%;
+                display: flex;
+                flex-flow: wrap row;
+                object-fit: cover;
+            }
+
+            @media(max-width:800px) {
+
+                img {
+                    width: 100%;
+                    display: flex;
+                    flex-flow: wrap row;
+                    object-fit: cover;
+                    height: 400px;
                 }
+            }
+
+            h2 {
+                color: #212121;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 300;
+                align-self: center;
+                align-items: center;
+            }
+
+            p {
+                margin: 0 auto;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .image-container {
+                display: flex;
+                margin: 0 auto;
+                justify-content: center;
+                height: 550px;
+                width: 100%;
+            }
+
+            @media(max-width:800px) {
+
+                .image-container {
+                    display: flex;
+                    margin: 0 auto;
+                    justify-content: center;
+                    height: 400px;
+                }
+            }
+
+            h1 {
+                font-size: 40px;
+                text-align: center;
+                align-self: auto;
+                color: #fff;
+            }
+
+            .title-umanitar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 105;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 600px;
+                width: 100%;
+                pointer-events: none;
+            }
+        
+        </style>
 
 
-.umanitar-content {
+        <div class="title-umanitar">
+            <h1>UMANITAR</h1>
+        </div>
 
-    display: f;
-    margin: 0px auto;
-    padding: 20px 0;
-    max-width: 1200px;
-}
-   
+        <h2>Gestul tau conteaza!</h2>
+        <div class="image-container">
+            <img src="/images/help.jpg">
+        </div>
 
+        <div class="umanitar-content">
 
-
-img {
-    width: 100%;
-    display: flex;
-    flex-flow: wrap row;
-    object-fit: cover;
-  
-
-
-}
-
-
-
-
-@media(max-width:800px){
-
-    img {
-    width: 100%;
-    display: flex;
-    flex-flow: wrap row;
-    object-fit: cover;
-    height: 400px;
-
-}
-
-}
-
-
-
-
-
-
-
-h2 {
-    color: #212121;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 300;
-    align-self: center;
-    align-items: center;
-}
-
-
-p {
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-}
-
-
-
-
-.image-container {
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    height: 550px;
-    width: 100%;
-}
-
-
-@media(max-width:800px){
-
-.image-container {
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    height: 400px;
+            <p>Bacon ipsum dolor amet prosciutto turkey cow, tenderloin kevin chicken bresaola fatback frankfurter ham. Pork
+                tongue venison tenderloin meatloaf. Buffalo tongue pig tri-tip Bacon ipsum dolor amet prosciutto turkey cow,
+                tenderloin kevin chicken bresaola fatback frankfurter ham. Pork tongue venison tenderloin meatloaf. Buffalo
+                tongue</p>
+            <p>Bacon ipsum dolor amet prosciutto turkey cow, tenderloin kevin chicken bresaola fatback frankfurter ham. Pork
+                tongue venison tenderloin meatloaf. Buffalo tongue pig tri-tip Bacon ipsum dolor amet prosciutto turkey cow,
+                tenderloin kevin chicken bresaola fatback frankfurter ham. Pork tongue venison tenderloin meatloaf. Buffalo
+                tongue</p>
 
 
 
-}
-
-}
-
-
-
-
-
-
-h1{
-  font-size: 40px;
-  text-align: center;
-  align-self: auto;
-  color: #fff;
-}
-
-
-
-
-.title-umanitar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 105;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 600px;
-  width:100%;
-  pointer-events: none;
-}
-
-
-
-            </style>
-
-
-<div class="title-umanitar">      
-<h1>UMANITAR</h1>
-</div>   
-
-<h2>Gestul tau conteaza!</h2>
-<div class="image-container">
-<img src ="/images/help.jpg">
-</div>
-
-<div class="umanitar-content">
-      
-        <p>Bacon ipsum dolor amet prosciutto turkey cow, tenderloin kevin chicken
-         bresaola fatback frankfurter ham. Pork tongue venison tenderloin meatloaf.
-          Buffalo tongue pig tri-tip
-        Bacon ipsum dolor amet prosciutto turkey cow, tenderloin kevin chicken bresaola
-         fatback frankfurter ham. Pork tongue venison tenderloin meatloaf. Buffalo tongue</p>     
-         <p>Bacon ipsum dolor amet prosciutto turkey cow, tenderloin kevin chicken
-                bresaola fatback frankfurter ham. Pork tongue venison tenderloin meatloaf.
-                 Buffalo tongue pig tri-tip
-               Bacon ipsum dolor amet prosciutto turkey cow, tenderloin kevin chicken bresaola
-                fatback frankfurter ham. Pork tongue venison tenderloin meatloaf. Buffalo tongue</p>                  
-
-
-
-</div>    
+        </div>
 
 
 
@@ -157,21 +118,21 @@ h1{
 
 
 
-             </template>
-        <script>
-            class MyGestUmanitar extends Polymer.Element {
-                static get is() { return 'my-gest-umanitar'; }
-                static get properties() {
-                return {
-                 };
-             }
+    </template>
+    <script>
+        class MyGestUmanitar extends Polymer.Element {
+            static get is() {
+                return 'my-gest-umanitar';
+            }
+            static get properties() {
+                return {};
+            }
             constructor() {
                 super();
             }
             ready() {
                 super.ready();
-                Polymer.RenderStatus.afterNextRender(this, function() {
-                });
+                Polymer.RenderStatus.afterNextRender(this, function () {});
             }
         }
         window.customElements.define(MyGestUmanitar.is, MyGestUmanitar);

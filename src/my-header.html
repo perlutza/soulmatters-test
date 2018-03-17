@@ -9,103 +9,80 @@
     <template>
 
 
-            <firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
-            
-
-
-
-
-
-                <div class="login">
-                        <paper-button on-tap="login"><h2>Login</h2></paper-button>
-
-                    </div>
-        <div class="background"> 
-            
-                <div class="layer">
-                     
-            <iron-image src="/images/abstract2.jpg">
-              
-            </iron-image>
-
-            
-          <div class="overlay"></div>  
-          <h1>[[user.displayName]]</h1>
-          <my-menu></my-menu>
+        <firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
+            <div class="login">
+                <paper-button on-tap="login">
+                    <h2>Login</h2>
+               </paper-button>
         </div>
-    </div>
+            <div class="background">
+                <div class="layer">
+                    <iron-image src="/images/abstract2.jpg">
+                    </iron-image>
+                    <div class="overlay"></div>
+                    <h1>[[user.displayName]]</h1>
+                    <my-menu></my-menu>
+                </div>
+            </div>
 
+            <style>
+                :host {
+                    display: block;
+                }
 
+                .background {
+                    width: 100%;
+                    height: auto;
+                }
 
+                .login {
+                    display: flex;
+                    justify-content: flex-end;
+                }
 
-        <style>
-            :host {
-                display: block;
-            }
+                .layer {
+                    width: 100%;
+                    height: auto;
+                    z-index: 105;
+                    position: relative;
+                    display: grid;
+                    grid-template-areas: "head";
+                }
 
+                .overlay {
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    position: absolute;
+                    height: 100%;
+                    background-color: #0000008c;
+                }
 
+                my-menu {
+                    grid-area: head;
+                    justify-self: flex-end;
+                    align-self: center;
+                }
 
-            .background {
-                width: 100%;
-                height: auto;
-            }
+                iron-image {
+                    width: 100vw;
+                    height: 500px;
+                    grid-area: head;
+                }
 
+                paper-button {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #212121;
+                    z-index: 106;
+                    position: absolute;
+                }
 
-.login{
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-.layer{
-    width: 100%;
-    height: auto;
-    z-index: 105;
-    position: relative;
-    display: grid;
-    grid-template-areas: "head";
-}
- 
-  
-
-.overlay{
-    top: 0;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    height: 100%;
-    background-color:  #0000008c;
-
-}
-
-
-
-my-menu{
-        grid-area: head;
-        justify-self: flex-end;
-        align-self: center;
-}
-
-            iron-image {
-                width: 100vw;
-                height: 500px;
-                grid-area: head;
-            }
-
-paper-button{
-    width: 100px;
-    height: 100px;
-    background-color: #212121;
-    z-index: 106;
-    position: absolute;
-}
-
-
-h2{
-    color: #fff;
-}
-
-        </style>
+                h2 {
+                    color: #fff;
+                }
+                
+            </style>
 
 
 
@@ -126,14 +103,12 @@ h2{
                 Polymer.RenderStatus.afterNextRender(this, function () {});
             }
 
-            login(){
+            login() {
                 this.$.auth.signInWithPopup('google')
-    .then(function(response) {
-    })
-    .catch(function(error) {
-    });
+                    .then(function (response) {})
+                    .catch(function (error) {});
             }
-            handleError(error){
+            handleError(error) {
                 console.log(error)
             }
         }
