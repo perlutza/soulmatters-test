@@ -1,6 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="my-menu.html">
 
 
@@ -8,16 +9,33 @@
     <template>
 
 
-        <div class="background"> 
-                <div class="layer">
+            <firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
+            
 
+
+
+
+
+                <div class="login">
+                        <paper-button on-tap="login"><h2>Login</h2></paper-button>
+
+                    </div>
+        <div class="background"> 
+            
+                <div class="layer">
+                     
             <iron-image src="/images/abstract2.jpg">
+              
             </iron-image>
 
+            
           <div class="overlay"></div>  
+          <h1>[[user.displayName]]</h1>
           <my-menu></my-menu>
         </div>
     </div>
+
+
 
 
         <style>
@@ -32,6 +50,11 @@
                 height: auto;
             }
 
+
+.login{
+    display: flex;
+    justify-content: flex-end;
+}
 
 
 .layer{
@@ -68,6 +91,20 @@ my-menu{
                 height: 500px;
                 grid-area: head;
             }
+
+paper-button{
+    width: 100px;
+    height: 100px;
+    background-color: #212121;
+    z-index: 106;
+    position: absolute;
+}
+
+
+h2{
+    color: #fff;
+}
+
         </style>
 
 
@@ -88,7 +125,20 @@ my-menu{
                 super.ready();
                 Polymer.RenderStatus.afterNextRender(this, function () {});
             }
+
+            login(){
+                this.$.auth.signInWithPopup('google')
+    .then(function(response) {
+    })
+    .catch(function(error) {
+    });
+            }
+            handleError(error){
+                console.log(error)
+            }
         }
+
+
         window.customElements.define(MyHeader.is, MyHeader);
     </script>
 </dom-module>

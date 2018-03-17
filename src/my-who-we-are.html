@@ -1,0 +1,138 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+
+<dom-module id="my-who-we-are">
+    <template>
+
+
+        <div class="about-title">
+            <h1>ABOUT</h1>
+        </div>
+
+
+        <h2>Who we are</h2>
+        <div class="text-who">
+
+
+
+
+            <p>Lorem ipsum dolor sit amet, vim in quodsi explicari, cu consul nonumes lobortis cum, est quot nulla simul in.
+                Dicat aliquip vix an. Ei regione principes deterruisset vel, no vide utinam omnesque sea, ius dissentias
+                ullamcorper ei. Integre principes no duo, his cu regione omittantur persequeris. Sed id veri possim assueverit,
+                summo eruditi delicata quo cu, altera eleifend ei eum. Putent democritum ei usu, et malorum definiebas qui.
+                At pro vitae nonumes definiebas, no est dolor persius. Patrioque elaboraret ne vis, an mutat homero est,
+                esse vidit id sed. Sed ornatus suavitate et, cum vero ipsum viderer at, usu ei verterem euripidis persecuti.
+                Eruditi adversarium efficiantur nam an, id postea accusata mea, sit iusto verterem phaedrum an.
+            </p>
+
+        </div>
+
+
+
+
+        </div>
+
+
+        <style>
+            :host {
+                display: block
+            }
+
+            .about-title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 105;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 600px;
+                width: 100%;
+                pointer-events: none;
+            }
+
+
+
+            img {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                margin: 0 20px;
+            }
+
+            p {
+                margin: 0 auto;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .text-who {
+                display: flex;
+                justify-content: center;
+                flex-flow: wrap row;
+                margin: 0 auto;
+                max-width: 1200px;
+            }
+
+
+
+
+
+
+            h1 {
+                font-size: 40px;
+                text-align: center;
+                align-self: auto;
+                color: #fff;
+            }
+
+
+
+            h2 {
+                color: #212121;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 300;
+                align-self: center;
+                align-items: center;
+                margin: 40px auto;
+            }
+
+
+            h3 {
+                text-align: center;
+                color: #ffffff;
+                margin: 0 auto;
+            }
+
+
+
+            h4 {
+                color: #fff;
+                text-align: center;
+                margin-top: 34px;
+                font-size: 30px;
+                font-weight: 300;
+            }
+        </style>
+
+    </template>
+    <script>
+        class MyWhoWeAre extends Polymer.Element {
+            static get is() {
+                return 'my-who-we-are';
+            }
+            static get properties() {
+                return {};
+            }
+            constructor() {
+                super();
+            }
+            ready() {
+                super.ready();
+                Polymer.RenderStatus.afterNextRender(this, function () {});
+            }
+        }
+        window.customElements.define(MyWhoWeAre.is, MyWhoWeAre);
+    </script>
+</dom-module>

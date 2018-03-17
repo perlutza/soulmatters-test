@@ -24,6 +24,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../bower_components/polymerfire/polymerfire.html">
+
 
 
 
@@ -35,8 +37,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="my-contact.html">
 <link rel="import" href="my-menu.html">
 <link rel="import" href="the-footer.html">
-<link rel="import" href="my-cine-suntem.html">
-<link rel="import" href="my-scrie-articol.html">
+<link rel="import" href="my-who-we-are.html">
+<link rel="import" href="my-trimite-articol.html">
 <link rel="import" href="my-gest-umanitar.html">
 <link rel="import" href="my-articole-site.html">
 
@@ -139,6 +141,19 @@ my-menu{
 
 
 
+    <firebase-app
+    auth-domain="test-edf10.firebaseapp.com"
+    database-url="https://test-edf10.firebaseio.com"
+    api-key="AIzaSyAzpQlmzP9FT7-Tc4bIxhVEJdVOSITA9do"
+    storage-bucket="test-edf10.appspot.com"
+    messaging-sender-id="1086137854604">
+  </firebase-app>
+
+
+
+
+ 
+
 
 
     <app-drawer-layout fullbleed narrow="{{narrow}}" responsive-width="2500px" height="300px">
@@ -149,8 +164,8 @@ my-menu{
 <div class="swipe-menu">
         <iron-icon icon="icons:home"> </iron-icon><a href="/">Acasa</a>
         <iron-icon icon="icons:class"></iron-icon> <a href="/articole-site">Articole</a>
-        <iron-icon icon="icons:face"></iron-icon><a href="/cine-suntem">Despre</a>
-        <iron-icon icon="icons:arrow-downward"></iron-icon><a href="/scrie-articol">Scrie articol</a>
+        <iron-icon icon="icons:face"></iron-icon><a href="/who-we-are">About</a>
+        <iron-icon icon="icons:arrow-downward"></iron-icon><a href="/trimite-articol">Trimite articol</a>
         <iron-icon icon="icons:arrow-downward"></iron-icon><a href="/gest-umanitar">Umanitar</a>
 
 
@@ -190,8 +205,8 @@ my-menu{
           <my-view2 name="view2"></my-view2>
           <my-view3 name="view3"></my-view3>
           <my-view404 name="view404"></my-view404>
-          <my-cine-suntem name="cine-suntem"></my-cine-suntem>
-          <my-scrie-articol name="scrie-articol"></my-scrie-articol>
+          <my-who-we-are name="who-we-are"></my-who-we-are>
+          <my-trimite-articol name="trimite-articol"></my-trimite-articol>
           <my-gest-umanitar name ="gest-umanitar"></my-gest-umanitar>
           <my-articole-site name="articole-site"></my-articole-site>
           
@@ -252,13 +267,23 @@ my-menu{
             null,
             this._showPage404.bind(this),
             true);
+            
       }
+
 
       _showPage404() {
         this.page = 'view404';
       }
+
+
+      
     }
 
     window.customElements.define(MyApp.is, MyApp);
+    
   </script>
+
+
+
+
 </dom-module>

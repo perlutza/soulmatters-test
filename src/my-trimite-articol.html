@@ -3,7 +3,7 @@
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
 
-    <dom-module id="my-scrie-articol">
+    <dom-module id="my-trimite-articol">
         <template>
             <style>
                 :host {
@@ -56,9 +56,20 @@ p {
 
 paper-input {
     width: 200px;
+    margin-left: 297px;
+    padding: 20px 0;
+}
+
+
+@media (max-width: 700px){
+paper-input#form1 {
+    width: 200px;
     margin: 0 auto;
     padding: 20px 0;
 }
+}
+
+
 
 
 paper-input#stil {
@@ -203,8 +214,8 @@ input-type{
 
              </template>
         <script>
-              class MyScrieArticol extends Polymer.Element {
-                static get is() { return 'my-scrie-articol'; }
+              class MyTrimiteArticol extends Polymer.Element {
+                static get is() { return 'my-trimite-articol'; }
                 static get properties() {
                 return {
                  };
@@ -237,7 +248,7 @@ const toast = this.$.toast
             }
             
         }
-        window.customElements.define(MyScrieArticol.is, MyScrieArticol);
+        window.customElements.define(MyTrimiteArticol.is, MyTrimiteArticol);
     </script>
 </dom-module>
 
