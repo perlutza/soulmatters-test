@@ -5,30 +5,90 @@
             :host {
                 display: block
             }
+
+           img{
+               height: 400px;
+               width: 100%;
+               object-fit: cover; 
+           }
+
+.articole-site {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.post {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin: 10px 0;
+}
+
+h1{
+    margin: 0 auto;
+    text-align: center;
+    margin: 40px 0;
+}
+
+h2{
+    text-align: center;
+    color: #212121;
+}
+
+
         </style>
-        <template is="dom-repeat" items="{{articole.site}}">
+         <h1>Articole</h1>
+        <template is="dom-repeat" items="{{articole}}" as="post">
             <div class="articole-site">
-                <div class="title" title="{{title}}">
-                    <div class="image" image="{{image}}">
-                        <div class="post" post="{{post}}">
+
+                <div class="post">         
+                    <img class="image" id="arrange" src="https://soulmatters.ro{{post.feature_image}}">
+                    <h2>[[post.title]]</h2>  
+
+                        <div class="post" >
+                                {{trim(post.html)}}
                         </div>
-                    </div>
+    
         </template>
+    </template>
         <script>
             class MyArticoleSite extends Polymer.Element {
                 static get is() {
                     return 'my-articole-site';
                 }
                 static get properties() {
-                    return {};
+                    return {
+                        articole:Array,
+                        articletitle:Array
+                    
+                    };
                 }
                 constructor() {
                     super();
                 }
                 ready() {
                     super.ready();
+                    this.getPosts()
                     Polymer.RenderStatus.afterNextRender(this, function () {});
                 }
+                 
+                 trim(text){
+                     return text.substr(0,260).replace(/<(?:.|\n)*?>/gm, '');
+                 }
+
+                getPosts(){
+                    fetch('/data/data.json').then((res) => {
+                        return res.json()
+
+                    })
+                    .then((data)=>{
+                        this.articole=data
+                    })
+
+                }
+
+                
             }
             window.customElements.define(MyArticoleSite.is, MyArticoleSite);
         </script>

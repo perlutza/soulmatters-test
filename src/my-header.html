@@ -8,17 +8,23 @@
     <template>
         <firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
             <div class="login">
-                <paper-button on-tap="login">
-                    <h2>Login</h2>
-               </paper-button>
+                <paper-button on-tap="login" hidden="[[user]]">
+                    Login
+                </paper-button>
+                <h1>[[user.displayName]]</h1>
+
+               <paper-button on-tap="logout" hidden="[[!user]]">Logout</paper-button>
+
+
+
         </div>
             <div class="background">
                 <div class="layer">
                     <iron-image src="/images/abstract2.jpg">
                     </iron-image>
                     <div class="overlay"></div>
-                    <h1>[[user.displayName]]</h1>
                     <my-menu></my-menu>
+                    
                 </div>
             </div>
 
@@ -79,6 +85,13 @@
                     color: #fff;
                 }
 
+                h1 {
+                    color: #fff;
+                    font-size: 10px;
+                    text-align: center;
+                }
+
+
             </style>
     </template>
     <script>
@@ -105,8 +118,13 @@
             handleError(error) {
                 console.log(error)
             }
-        }
 
+            logout() {
+                this.$.auth.signOut()
+                  
+            }
+
+}
 
         window.customElements.define(MyHeader.is, MyHeader);
     </script>
