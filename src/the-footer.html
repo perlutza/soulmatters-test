@@ -1,6 +1,8 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/smd-social/smd-social.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<link rel="import" href="good-map.html">
 <dom-module id="the-footer">
     <template>
         <style>
@@ -136,6 +138,14 @@
                 }
             }
 
+ 
+ good-map{
+  
+                width: 100%;
+                height: 500px;
+            }
+ 
+
         </style>
 
         <div class="footer">
@@ -160,23 +170,40 @@
                         <h6>Soulmatters</h6>
                         <h6>Copyright 2018</h6>
                     </div>
+
+<good-map>
+
+</good-map>
+
+
     </template>
     <script>
         class TheFooter extends Polymer.Element {
             static get is() {
                 return 'the-footer';
             }
-            static get properties() {
-                return {};
-            }
+            static get properties(
+            ) {
+                return {
+                };
+        }
+            
+            
             constructor() {
                 super();
             }
+
+
             ready() {
                 super.ready();
                 Polymer.RenderStatus.afterNextRender(this, function () {});
             }
         }
         window.customElements.define(TheFooter.is, TheFooter);
-    </script>
+
+</script>
+
+
+
+
 </dom-module>

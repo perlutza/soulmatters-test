@@ -1,0 +1,94 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/google-map/google-map-marker.html">
+<link rel="import" href="../bower_components/google-apis/google-maps-api.html">
+<link rel="import" href="../bower_components/good-map/good-map.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="good-map.html">
+
+
+
+
+
+
+    <dom-module id="good-map">
+        <template>
+            <style>
+                :host {
+        position: relative;
+        display: block;
+        height: 100%;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: tan;
+      }
+  
+            </style>
+
+
+
+
+
+
+
+<title>good-maps</title>
+
+
+
+<good-map api-key="AIzaSyAQuo91bcoB-KwWXaANroTrzpNZRFcNJ1k"
+    latitude="30"
+    longitude="-100" zoom="2"
+    map-options='{"mapTypeId": "satellite"}'></good-map>
+
+            
+             </template>
+        <script>
+            class GoodMap extends Polymer.Element {
+                static get is() {
+                  return 
+                 
+                   }
+                static get properties() {
+                return  {
+                    
+                 };
+
+
+             }
+            constructor() {
+                super();
+            }
+
+GoodMap(){
+    mapTypeId:"satellite"
+    apiKey:"true"
+    
+}
+
+            ready() {
+                super.ready();
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                    
+                });
+            }
+            }
+
+
+        window.customElements.define(GoodMap.is, GoodMap);
+
+
+
+
+
+
+    </script>
+
+
+
+
+</dom-module>
