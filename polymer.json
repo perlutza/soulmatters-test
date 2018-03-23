@@ -9,7 +9,8 @@
   ],
   "sources": [
     "images/**/*",
-    "src/**/*"
+    "src/**/*",
+    "_redirects"
   ],
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",
