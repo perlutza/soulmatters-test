@@ -24,7 +24,19 @@
   "builds": [
    
     {
-      "preset": "es6-bundled"
+      "name": "es6-bundled",
+      "bundle":false,
+      "html": {
+        "minify": true
+      },
+      "js": {
+        "minify": true,
+        "compile": true
+      },
+      "css": {
+        "minify": true
+      },
+      "addServiceWorker": true
     }
   ]
 }
