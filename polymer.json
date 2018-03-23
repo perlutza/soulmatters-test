@@ -11,7 +11,7 @@
     "images/**/*",
     "src/**/*",
     "_redirects",
-    "data/*"
+    "data/data.json"
   ],
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",
