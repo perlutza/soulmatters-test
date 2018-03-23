@@ -27,9 +27,8 @@
     "paper-toast": "PolymerElements/paper-toast#^2.1.0",
     "polymerfire": "firebase/polymerfire#^2.2.1",
     "google-apis": "GoogleWebComponents/google-apis#^2.0.1",
-    "iron-component-page": "PolymerElements/iron-component-page#^3.0.1",
-    "google-map": "GoogleWebComponents/google-map#^2.0.4",
-    "good-map": "keanulee/good-map#^0.0.1"
+    "iron-component-page": "PolymerElements/iron-component-page#^3.0.1"
+   
   },
   "resolutions": {
     "polymer": "^2.0.0"
