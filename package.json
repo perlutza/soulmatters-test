@@ -9,7 +9,9 @@
   "dependencies": {
     "webcomponents": "^0.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "polymer-cli": "^1.6.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "polymer build"
