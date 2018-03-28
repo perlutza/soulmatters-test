@@ -1,6 +1,8 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/smd-social/smd-social.html">
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="google-maps.html">
+
 
 <dom-module id="the-footer">
     <template>
@@ -137,6 +139,12 @@
                 }
             }
 
+            google-maps{
+                display: flex;
+                height: 300px;
+                width: 100%;
+            }
+
         </style>
 
         <div class="footer">
@@ -162,7 +170,9 @@
                         <h6>Copyright 2018</h6>
                     </div>
 
+<google-maps>
 
+</google-maps>
 
 
     </template>
